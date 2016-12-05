@@ -1,0 +1,5 @@
+{
+  "filename" : "logs/web-server.log",
+  "levels": "ALL",
+  "console": true
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/lib/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/lib/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script type="text/javascript" src="/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.easyui.min.js"></script>
+</head>
+<body style="background: white; font-size: 12px;">
+ 
+    <div style="padding:5px 0;">
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="width:80px">Search</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-print'" style="width:80px">Print</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',disabled:true" style="width:80px">Reload</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-help'" style="width:80px">用户登出</a>
+
+        <input id="sb" class="easyui-switchbutton" checked style="width:100px;height:30px">
+    </div>
+
+    <div style="margin-bottom:20px">
+        <div>Email:</div>
+        <input class="easyui-textbox" data-options="prompt:'Enter a email address...',validType:'email'" style="width:150px;height:32px">
+    </div>
+
+    <div class="easyui-panel" title="Login to system" style="width:400px;padding:30px 70px 20px 70px">
+        <div style="margin-bottom:10px">
+            <input class="easyui-textbox" style="width:100%;height:40px;padding:12px" data-options="prompt:'Username',iconCls:'icon-man',iconWidth:38">
+        </div>
+        <div style="margin-bottom:20px">
+            <input class="easyui-textbox" type="password" style="width:100%;height:40px;padding:12px" data-options="prompt:'Password',iconCls:'icon-lock',iconWidth:38">
+        </div>
+        <div style="margin-bottom:20px">
+            <input type="checkbox" checked="checked">
+            <span>Remember me</span>
+        </div>
+        <div>
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="padding:5px 0px;width:100%;">
+                <span style="font-size:14px;">Login</span>
+            </a>
+        </div>
+    </div>
+
+    <div>
+        <a href="#" title="This is the tooltip message." class="easyui-tooltip">Hover me</a>
+    </div>
+
+
+</body>
+</html>

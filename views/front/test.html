@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic UI</title>
+  <link rel="stylesheet" href="/front/dist/semantic.min.css">
+  <script src="/front/dist/jquery.min.js"></script>
+  <script src="/front/dist/semantic.min.js"></script>
+
+	<script>
+	  $(document).ready(function() {
+	  	$.fn.api.settings.api = {
+			  'get time' : 'http://192.168.20.137:30701/getTime',
+			};
+	  	$('.button').api({
+			    action: 'get time',
+			    method: 'POST',
+			    data: {
+			      name: 'Joe Henderson',
+			      pwd: 123,
+			      data: $('#in').val()
+			    },
+				  onSuccess: function(response) {
+		          $('#test').val(JSON.stringify(response))
+		      },
+		      onError: function(err) {
+		      	alert(err);
+		      }
+			  });
+	  });
+	 </script>
+
+</head>
+<body>
+
+	<div class="ui icon input">
+	  <i class="search icon"></i>
+	  <input id="in" value="tracy" type="text" placeholder="Type here...">
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui primary button">Click Me</div>
+	<div class="ui disabled button">Disabled</div>
+
+	<div class="ui hidden divider"></div>
+	<div class="ui fluid input">
+	  <input id='test' type="text" placeholder="Search...">
+	</div>
+
+</body>
+</html>

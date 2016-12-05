@@ -1,0 +1,31 @@
+[{
+	"description": "入口",
+	"url": "/",
+	"path": "front",
+	"type": "get"
+}, {
+	"description": "后台入口",
+	"url": "/admin",
+	"path": "main",
+	"type": "get"
+}, {
+	"description": "加载web界面",
+	"url": "/views/:path",
+	"path": "views",
+	"type": "get"
+}, {
+	"description": "logout",
+	"url": "/logout",
+	"path": "logout",
+	"type": "get"
+}, {
+	"description": "login redirect",
+	"url": "/login",
+	"path": "login",
+	"type": "post"
+}, {
+	"description": "test json",
+	"url": "/test/json",
+	"path": "test/json",
+	"type": "post"
+}]

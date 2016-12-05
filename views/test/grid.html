@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/lib/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/lib/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script type="text/javascript" src="/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.easyui.min.js"></script>
+</head>
+<body style="background: white; font-size: 12px;">
+ 
+    <table class="easyui-datagrid" data-options="url:'/json/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
+        <thead>
+            <tr>
+                <th data-options="field:'itemid'" width="80">Item ID</th>
+                <th data-options="field:'productid'" width="80">Product ID</th>
+                <th data-options="field:'listprice',align:'right'" width="80">List Price</th>
+                <th data-options="field:'unitcost',align:'right'" width="80">Unit Cost</th>
+                <th data-options="field:'attr1'" width="80">Attribute</th>
+                <th data-options="field:'status',align:'center'" width="80">Status</th>
+            </tr>
+        </thead>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+	"web": {
+		"name": "ZZWebServer",
+		"type": "http",
+		"port": 30777,
+		"host": "0.0.0.0"
+	},
+	"mongodb": {
+		"host": "127.0.0.1",
+		"db": "web",
+		"port": 27017,
+		"max_pool_size": 1000
+	}
+}
