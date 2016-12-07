@@ -28,4 +28,9 @@
 	"url": "/test/json",
 	"path": "test/json",
 	"type": "post"
+}, {
+	"description": "uploadImg",
+	"url": "/uploadImg",
+	"path": "uploadImg",
+	"type": "post"
 }]

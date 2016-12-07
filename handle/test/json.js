@@ -4,7 +4,9 @@ var util = require('../../app/util');
 
 function handle(clientip, args, endcb, req, res) {
 
-	common.db.collection('info').find({}).toArray(function(err, info) {
+	common.db.collection('info').find({
+        id: 'zz'
+    }).toArray(function(err, info) {
 		var msg = {};
 
         if (err) {

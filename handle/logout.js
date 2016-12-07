@@ -4,7 +4,7 @@
  */
 function handle(clientip, args, endcb, req, res) {
 	req.session.user = null;
-	res.redirect('/');
+	res.redirect('/admin');
 };
 
 /**
