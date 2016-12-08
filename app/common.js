@@ -31,6 +31,28 @@ function getDB(host, port, db) {
     return db;
 };
 
+function genId(key, callback) {
+    _db.command({
+        findAndModify: 'global_id',
+        query: {
+            '_id': key
+        },
+        new: true,
+        upsert: true,
+        update: {
+            $inc: {
+                'gid': 1
+            }
+        }
+    }, function(err, result) {
+        if (err) {
+            callback('db err');
+        } else {
+            callback(null, result.value.gid);
+        }
+    });
+}
+
 module.exports = {
     'db': _db,
     'getDB': getDB

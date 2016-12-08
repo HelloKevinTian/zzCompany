@@ -7,7 +7,7 @@
 	},
 	"mongodb": {
 		"host": "127.0.0.1",
-		"db": "web",
+		"db": "zzWeb",
 		"port": 27017,
 		"max_pool_size": 1000
 	}

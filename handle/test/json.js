@@ -4,19 +4,18 @@ var util = require('../../app/util');
 
 function handle(clientip, args, endcb, req, res) {
 
-	common.db.collection('info').find({
-        id: 'zz'
-    }).toArray(function(err, info) {
+	common.db.collection('zz_news').find({}).toArray(function(err, info) {
 		var msg = {};
 
         if (err) {
-        	msg.err = err;
+        	msg.err = 1;
         } else {
         	msg.result = info;
         }
 
         endcb(msg);
     });
+
 };
 
 module.exports = {

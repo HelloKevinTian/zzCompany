@@ -33,4 +33,9 @@
 	"url": "/uploadImg",
 	"path": "uploadImg",
 	"type": "post"
+}, {
+	"description": "update news",
+	"url": "/admin/news_update",
+	"path": "admin/news_update",
+	"type": "post"
 }]
