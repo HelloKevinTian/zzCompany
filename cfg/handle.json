@@ -34,8 +34,33 @@
 	"path": "uploadImg",
 	"type": "post"
 }, {
+	"description": "get news",
+	"url": "/admin/news_get",
+	"path": "admin/news_get",
+	"type": "post"
+}, {
 	"description": "update news",
 	"url": "/admin/news_update",
 	"path": "admin/news_update",
+	"type": "post"
+}, {
+	"description": "get work",
+	"url": "/admin/work_get",
+	"path": "admin/work_get",
+	"type": "post"
+}, {
+	"description": "update work",
+	"url": "/admin/work_update",
+	"path": "admin/work_update",
+	"type": "post"
+}, {
+	"description": "get about",
+	"url": "/admin/about_get",
+	"path": "admin/about_get",
+	"type": "post"
+}, {
+	"description": "update about",
+	"url": "/admin/about_update",
+	"path": "admin/about_update",
 	"type": "post"
 }]

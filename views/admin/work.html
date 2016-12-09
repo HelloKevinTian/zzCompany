@@ -8,8 +8,9 @@
 
 	<!-- Site Properties -->
 	<title>ZZCompany</title>
-	<link rel="stylesheet" type="text/css" href="/front/dist/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="/lib/semantic-ui/dist/semantic.min.css">
 	<link rel="stylesheet" href="/lib/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" type="text/css" href="/lib/dataTables/jquery.dataTables.min.css">
 
 	<style type="text/css">
 
@@ -36,10 +37,10 @@
 
  	</style>
 
-	<script src="/front/dist/jquery.min.js"></script>
-	<script src="/front/dist/semantic.min.js"></script>
-	<script src="/front/dist/tablesort.js"></script>
-	<script charset="utf-8" src="/js/admin/news.js"></script>
+	<script src="/lib/semantic-ui/dist/jquery.min.js"></script>
+	<script src="/lib/semantic-ui/dist/semantic.min.js"></script>
+	<script src="/lib/dataTables/jquery.dataTables.min.js"></script>
+	<script charset="utf-8" src="/js/admin/work.js"></script>
 	<script charset="utf-8" src="/lib/kindeditor/kindeditor-min.js"></script>
 	<script charset="utf-8" src="/lib/kindeditor/lang/zh_CN.js"></script>
 
@@ -82,28 +83,13 @@
 				<div class="eight width column">
 					<div class="ui form">
 						<div class="field">
+						  <input id="_id" type="hidden" name="_id"> 
 						  <h3 class="ui head">Title</h3>
 						  <input id="title" type="text" name="title" placeholder="title here.">
 						</div>
 						<div class="field">
 						  	<h3 class="ui head">Content</h3>
-							<textarea name="content" style="width:800px;height:400px;visibility:hidden;">
-								<h3 class="ui header">Unity程序员</h3>
-							  	<h4>岗位职责：</h4>
-								<p>
-									1.使用Unity3D进行游戏客户端核心模块开发；
-									2.参与游戏核心架构的搭建以及技术攻关；
-									3.撰写相关技术文档，实现与美术等人员的有效沟通。
-								</p>
-							  	<h4>任职要求：</h4>
-							  	<p> 
-							    	1.专科以上学历，计算机等相关专业；
-							    	2.具有3年以上Unity 3D游戏开发经验，至少经历过一款完整的网游项目的开发；
-							    	3.精通Unity 3D技术，熟悉移动平台开发技术，熟悉Unity 3D引擎架构设计；
-							    	4.具有较强的逻辑思维能力和问题解决能力；
-							    	5.具有较强的表达沟通能力和团队合作精神。
-							  	</p>
-							</textarea>
+							<textarea name="content" style="width:800px;height:400px;visibility:hidden;"></textarea>
 						</div>
 						<div class="ui primary submit button" id="submitBtn">Submit</div>
 						<div class="ui error message"></div>

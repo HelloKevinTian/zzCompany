@@ -22,7 +22,7 @@ $(document).ready(function() {
     // });
 
     $('.ui.form .submit.button').api({
-        url: '/admin/news_update',
+        url: '/admin/work_update',
         method: 'POST',
         // serializeForm: true, //适用于checkbox多选项的情况
         beforeSend: function(settings) {
@@ -54,7 +54,7 @@ $(document).ready(function() {
 function getJosnData() {
     $.ajax({
         type: 'POST',
-        url: '/admin/news_get',
+        url: '/admin/work_get',
         dataType: 'json',
         data: {},
         success: function(ret) {
