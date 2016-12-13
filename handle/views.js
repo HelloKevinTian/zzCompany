@@ -10,7 +10,9 @@ function handle(clientip, args, endcb, req, res) {
 			res.redirect('/admin');
 		}
 	}
-	res.render(path);
+	res.render(path, {
+		args: args
+	});
 };
 
 /**

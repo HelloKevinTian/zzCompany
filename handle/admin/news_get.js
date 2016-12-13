@@ -4,7 +4,12 @@ var util = require('../../app/util');
 
 function handle(clientip, args, endcb, req, res) {
 
-	common.db.collection('zz_news').find({}).toArray(function(err, info) {
+    var findObj = {};
+    if (args._id) {
+        findObj._id = Number(args._id);
+    }
+
+	common.db.collection('zz_news').find(findObj).toArray(function(err, info) {
 		var msg = {};
 
         if (err) {

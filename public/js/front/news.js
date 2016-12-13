@@ -55,7 +55,7 @@ function makeHtml(item) {
 	str += "<img src=\"/images/avatar/news_" + color + ".png\">";
 	str += "</div>";
 	str += "<div class=\"content\">";
-	str += "<a class=\"header\">";
+	str += "<a href=\"/views/front_newsDetail?article_id=" + item._id + "\" class=\"header\">";
 	str += item.title;
 	str += "</a>";
 	str += "<div class=\"meta\">";
@@ -65,10 +65,10 @@ function makeHtml(item) {
 	str += item.content ? delHtmlTag(item.content) : "There is no description about this article.";
 	str += "</div>";
 	str += "<div class=\"extra\">";
-	str += "<div class=\"ui right floated button\">";
+	str += "<a href=\"/views/front_newsDetail?article_id=" + item._id + "\" class=\"ui right floated button\">";
 	str += "阅读全文";
 	str += "<i class=\"angle double right icon\"></i>";
-	str += "</div>";
+	str += "</a>";
 	str += "<div class=\"ui label\">news</div>";
 	// str += "<div class=\"ui label\">notice</div>";
 	str += "</div>";
