@@ -30,48 +30,9 @@
 		.masthead .logo.item img {
 			margin-right: 1em;
 		}
-		.masthead .ui.menu .ui.button {
-			margin-left: 0.5em;
-		}
-		.masthead h1.ui.header {
-			margin-top: 3em;
-			margin-bottom: 0em;
-			font-size: 4em;
-			font-weight: normal;
-		}
-		.masthead h2 {
-			font-size: 1.7em;
-			font-weight: normal;
-		}
 
 		.ui.vertical.stripe {
 			padding: 3em 0em;
-		}
-		.ui.vertical.stripe h3 {
-			font-size: 2em;
-		}
-		.ui.vertical.stripe .button + h3,
-		.ui.vertical.stripe p + h3 {
-			margin-top: 3em;
-		}
-		.ui.vertical.stripe h4 {
-			font-size: 1.5em;
-		}
-		.ui.vertical.stripe .floated.image {
-			clear: both;
-		}
-		.ui.vertical.stripe p {
-			font-size: 1.33em;
-		}
-		.ui.vertical.stripe .horizontal.divider {
-			margin: 3em 0em;
-		}
-		.quote.stripe.segment {
-			padding: 0em;
-		}
-		.quote.stripe.segment .grid .column {
-			padding-top: 5em;
-			padding-bottom: 5em;
 		}
 
 		.footer.segment {
@@ -112,26 +73,7 @@
 
 	<script src="/lib/semantic-ui/dist/jquery.min.js"></script>
 	<script src="/lib/semantic-ui/dist/semantic.min.js"></script>
-	<script>
-		$(document).ready(function() {
-
-			// fix menu when passed
-			$('.masthead').visibility({
-				once: false,
-				onBottomPassed: function() {
-				$('.fixed.menu').transition('fade in');
-				},
-				onBottomPassedReverse: function() {
-				$('.fixed.menu').transition('fade out');
-				}
-			});
-
-			// create sidebar and attach to menu open
-			$('.ui.sidebar')
-			.sidebar('attach events', '.toc.item');
-
-		});
-	</script>
+	<script src="/js/front/news.js"></script>
 </head>
 <body>
 
@@ -174,50 +116,13 @@
 
 	  	<!-- content start -->
 		<div class="ui vertical stripe segment">
-	    	<div class="ui middle aligned stackable grid container">
-	      		<div class="twelve wide column">
-
-			        <div class="ui item">
-						<h3 class="ui header">Unity程序员</h3>
-						<h4>岗位职责：</h4>
-						<p>
-							1.使用Unity3D进行游戏客户端核心模块开发；
-							2.参与游戏核心架构的搭建以及技术攻关；
-							3.撰写相关技术文档，实现与美术等人员的有效沟通。
-						</p>
-						<h4>任职要求：</h4>
-						<p> 
-							1.专科以上学历，计算机等相关专业；
-							2.具有3年以上Unity 3D游戏开发经验，至少经历过一款完整的网游项目的开发；
-							3.精通Unity 3D技术，熟悉移动平台开发技术，熟悉Unity 3D引擎架构设计；
-							4.具有较强的逻辑思维能力和问题解决能力；
-							5.具有较强的表达沟通能力和团队合作精神。
-						</p>
-			          <div class="ui hidden divider"></div>
-			        </div>
-
-			        <div class="ui item">
-						<h3 class="ui header">Unity程序员</h3>
-						<h4>岗位职责：</h4>
-						<p>
-							1.使用Unity3D进行游戏客户端核心模块开发；
-							2.参与游戏核心架构的搭建以及技术攻关；
-							3.撰写相关技术文档，实现与美术等人员的有效沟通。
-						</p>
-						<h4>任职要求：</h4>
-						<p> 
-							1.专科以上学历，计算机等相关专业；
-							2.具有3年以上Unity 3D游戏开发经验，至少经历过一款完整的网游项目的开发；
-							3.精通Unity 3D技术，熟悉移动平台开发技术，熟悉Unity 3D引擎架构设计；
-							4.具有较强的逻辑思维能力和问题解决能力；
-							5.具有较强的表达沟通能力和团队合作精神。
-						</p>
-						<div class="ui hidden divider"></div>
-			        </div>
-
-	      		</div>
-	    	</div>
-	  	</div>
+			<div class="ui middle aligned container">
+				<div class="twelve wide column">
+					<div id="null"></div>
+					<div class="ui relaxed divided items"></div>
+				</div>
+			</div>
+		</div>
 		<!-- content end -->
 
 	  	<!-- footer start -->

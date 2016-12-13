@@ -73,11 +73,12 @@ function getJosnData() {
 
 function createTable(dataArray) {
     var tableStr = "<table id=\"dataTable\" class=\"ui blue striped celled table\">";
-    tableStr += "<thead><tr><th style=\"display:none\">id</th><th>Title</th><th>Time</th><th>Content</th><th>Setting</th></tr></thead><tbody>";
+    tableStr += "<thead><tr><th style=\"display:none\">id</th><th>Title</th><th>Time</th><th style=\"display:none\">Content</th><th>Setting</th></tr></thead><tbody>";
     var len = dataArray.length;
 
     for (var i = 0; i < len; i++) {
-        tableStr += "<tr><td style=\"display:none\">" + dataArray[i]._id + "</td>" + "<td>" + dataArray[i].title + "</td>" + "<td>" + dataArray[i].time + "</td>" + "<td>" + dataArray[i].content + "</td>";
+        tableStr += "<tr><td style=\"display:none\">" + dataArray[i]._id + "</td>" + "<td>" + dataArray[i].title + "</td>";
+        tableStr += "<td>" + dataArray[i].time + "</td>" + "<td style=\"display:none\">" + dataArray[i].content + "</td>";
         tableStr += "<td><div id=\"updateBtn_";
         tableStr += dataArray[i]._id;
         tableStr += "\" class=\"ui small primary labeled icon button\"><i class=\"write square large icon\"></i>Update</div></td></tr>"
