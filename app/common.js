@@ -55,5 +55,6 @@ function genId(key, callback) {
 
 module.exports = {
     'db': _db,
-    'getDB': getDB
+    'getDB': getDB,
+    'genId': genId
 };

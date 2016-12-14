@@ -2,6 +2,8 @@ $(document).ready(function() {
 
     getJosnData();
 
+    document.getElementById('title').focus();
+
     // $('.ui.form').form({
     //     fields: {
     //         title: {
@@ -49,6 +51,33 @@ $(document).ready(function() {
         },
     });
 
+    $('.ui.form .add.button').api({
+        url: '/admin/work_add',
+        method: 'POST',
+        // serializeForm: true, //适用于checkbox多选项的情况
+        beforeSend: function(settings) {
+            settings.data = {
+                title: $('.ui.form').form('get field', 'title').val(),
+                content: editor.html()
+            };
+            return settings;
+        },
+        onSuccess: function(ret) {
+            if (ret.err) {
+                errMessage('数据插入失败');
+            } else {
+                successMessage('数据插入成功~');
+                createTable(ret.result);
+            }
+        },
+        onFailure: function(response) {
+            errMessage('onFailure');
+        },
+        onError: function(err) {
+            errMessage(err);
+        },
+    });
+
 });
 
 function getJosnData() {
@@ -81,9 +110,11 @@ function createTable(dataArray) {
         tableStr += "<td>" + dataArray[i].time + "</td>" + "<td style=\"display:none\">" + dataArray[i].content + "</td>";
         tableStr += "<td><div id=\"updateBtn_";
         tableStr += dataArray[i]._id;
-        tableStr += "\" class=\"ui small primary labeled icon button\"><i class=\"write square large icon\"></i>Update</div></td></tr>"
+        tableStr += "\" class=\"ui small labeled icon button\"><i class=\"write square medium icon\"></i>Edit</div></td></tr>"
     }
-    tableStr = tableStr + "</tbody><tfoot class=\"full-width\"><tr><th colspan=\"4\"><div id=\"addBtn\" class=\"ui right floated positive labeled icon button\"><i class=\"add square large icon\"></i>Add</div></th></tr></tfoot></table>";
+    tableStr += "</tbody><tfoot class=\"full-width\"><tr><th colspan=\"4\">";
+    tableStr += "<div id=\"newBtn\" class=\"ui right floated positive labeled icon button\"><i class=\"add square medium icon\"></i>New</div>";
+    tableStr += "</th></tr></tfoot></table>";
 
 
     $("#newsTable").html(tableStr);
@@ -92,14 +123,27 @@ function createTable(dataArray) {
 }
 
 function initTableEvent() {
+    $('#newBtn').bind("click",
+        function() {
+            document.getElementById("submitBtn").setAttribute("style", "display:none");
+            document.getElementById("addBtn").removeAttribute("style");
+            $('#_id').val('');
+            $('#title').val('');
+            editor.html('');
+            document.getElementById('title').focus();
+        });
+
     $('#dataTable').dataTable({
         "createdRow": function(row, data, dataIndex) {
             // console.log(data[0], data[1], data[3]);
 
             $('#updateBtn_' + data[0]).click(function() {
+                document.getElementById("addBtn").setAttribute("style", "display:none");
+                document.getElementById("submitBtn").removeAttribute("style");
                 $('#_id').val(data[0]);
                 $('#title').val(data[1]);
                 editor.html(data[3]);
+                document.getElementById('title').focus();
             });
         }
     });

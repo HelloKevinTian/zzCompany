@@ -44,6 +44,11 @@
 	"path": "admin/news_update",
 	"type": "post"
 }, {
+	"description": "add news",
+	"url": "/admin/news_add",
+	"path": "admin/news_add",
+	"type": "post"
+}, {
 	"description": "get work",
 	"url": "/admin/work_get",
 	"path": "admin/work_get",
@@ -52,6 +57,11 @@
 	"description": "update work",
 	"url": "/admin/work_update",
 	"path": "admin/work_update",
+	"type": "post"
+}, {
+	"description": "add work",
+	"url": "/admin/work_add",
+	"path": "admin/work_add",
 	"type": "post"
 }, {
 	"description": "get about",

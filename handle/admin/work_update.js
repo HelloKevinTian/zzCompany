@@ -4,13 +4,20 @@ var util = require('../../app/util');
 
 function handle(clientip, args, endcb, req, res) {
 
+    if (!args._id) {
+        endcb({
+            err: 1
+        })
+        return;
+    }
+
     common.db.command({
         findAndModify: 'zz_work',
         query: {
             '_id': Number(args._id)
         },
         new: false, //返回更新后的数据
-        upsert: true, //没有该条记录时会insert一条（默认是false）
+        upsert: false, //没有该条记录时会insert一条（默认是false）
         update: {
             $set: {
                 'title': args.title,
