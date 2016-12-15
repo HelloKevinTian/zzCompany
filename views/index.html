@@ -87,6 +87,12 @@
 			display: none;
 		}
 
+		.overlay {
+			position:absolute;
+			right:0px;
+			width:120px;
+		}
+
 		/* 屏幕尺寸小于700像素时触发此段CSS */
 		@media only screen and (max-width: 700px) {
 			.ui.fixed.menu {
@@ -191,6 +197,11 @@
 
 			$('.ui.embed').embed();
 
+			$('.overlay').visibility({
+		    	type: 'fixed',
+		    	offset: 80
+		    });
+
 		});
   	</script>
 </head>
@@ -243,6 +254,14 @@
 				</div>
 		    </div>
   			<!-- menu -->
+
+  			<div class="overlay">
+				<div class="ui labeled icon vertical menu">
+					<a class="item"><img class="ui tiny image" src="/images/avatar/code.jpg"> 安卓下载</a>
+					<a class="item"><img class="ui tiny image" src="/images/avatar/code.jpg"> IOS下载</a>
+					<a class="item"><i class="mail icon"></i> 联系我们</a>
+				</div>
+		    </div>
 
 	      	<div class="ui two column centered grid">
 				<div class="column">

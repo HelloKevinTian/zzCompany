@@ -49,6 +49,11 @@
 	"path": "admin/news_add",
 	"type": "post"
 }, {
+	"description": "delete news",
+	"url": "/admin/news_del",
+	"path": "admin/news_del",
+	"type": "post"
+}, {
 	"description": "get work",
 	"url": "/admin/work_get",
 	"path": "admin/work_get",
@@ -67,6 +72,11 @@
 	"description": "get about",
 	"url": "/admin/about_get",
 	"path": "admin/about_get",
+	"type": "post"
+}, {
+	"description": "delete work",
+	"url": "/admin/work_del",
+	"path": "admin/work_del",
 	"type": "post"
 }, {
 	"description": "update about",

@@ -106,11 +106,13 @@ function createTable(dataArray) {
     var len = dataArray.length;
 
     for (var i = 0; i < len; i++) {
-        tableStr += "<tr><td style=\"display:none\">" + dataArray[i]._id + "</td>" + "<td>" + dataArray[i].title + "</td>";
-        tableStr += "<td>" + dataArray[i].time + "</td>" + "<td style=\"display:none\">" + dataArray[i].content + "</td>";
-        tableStr += "<td><div id=\"updateBtn_";
-        tableStr += dataArray[i]._id;
-        tableStr += "\" class=\"ui small labeled icon button\"><i class=\"write square medium icon\"></i>Edit</div></td></tr>"
+        tableStr += "<tr><td style=\"display:none\">" + dataArray[i]._id + "</td>" + "<td class=\"center aligned\">" + dataArray[i].title + "</td>";
+        tableStr += "<td class=\"center aligned\">" + dataArray[i].time + "</td>" + "<td style=\"display:none\">" + dataArray[i].content + "</td>";
+        tableStr += "<td class=\"center aligned\"><div id=\"updateBtn_" + dataArray[i]._id;
+        tableStr += "\" class=\"ui small labeled icon button\"><i class=\"write square medium icon\"></i>Edit</div>";
+        tableStr += "<div id=\"delBtn_" + dataArray[i]._id;
+        tableStr += "\" class=\"ui small labeled icon button\"><i class=\"delete square medium icon\"></i>Delete</div>";
+        tableStr += "</td></tr>"
     }
     tableStr += "</tbody><tfoot class=\"full-width\"><tr><th colspan=\"4\">";
     tableStr += "<div id=\"newBtn\" class=\"ui right floated positive labeled icon button\"><i class=\"add square medium icon\"></i>New</div>";
@@ -144,6 +146,38 @@ function initTableEvent() {
                 $('#title').val(data[1]);
                 editor.html(data[3]);
                 document.getElementById('title').focus();
+            });
+
+            $('#delBtn_' + data[0]).click(function() {
+                $('.ui.modal').modal({
+                    dimmerSettings: {
+                        opacity: 0.5 //decimals work all the way up to 1; 0.4, 1
+                    },
+                    onApprove: function() {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/admin/news_del',
+                            dataType: 'json',
+                            data: {
+                                _id: data[0]
+                            },
+                            success: function(ret) {
+                                if (ret.err) {
+                                    errMessage('数据删除失败');
+                                } else {
+                                    successMessage('数据删除成功~');
+                                    createTable(ret.result);
+                                }
+                            },
+                            error: function(err) {
+                                errMessage(err);
+                            }
+                        });
+                    },
+                    onDeny: function() {
+                        $('ui.modal').modal('hide');
+                    }
+                }).modal('show');
             });
         }
     });
